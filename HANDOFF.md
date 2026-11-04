@@ -50,6 +50,6 @@
 - Code `hooks/register.tsx` (bands, settings, judge), `hooks/theme.ts`, `hooks/agents.tsx`, `hooks/progress.tsx`.
 - Tests: `CLAUDE_CODE_ENABLE_FUNCTION_HOOKS=1 claude plugin test .` (`tests/effortless.test.ts`), 167 pass.
 - Rig `tools/render-band/` (README); `--options theme=orange` renders the orange band.
-- Render log `~/.claude/effortless-render-<chat>.log`. Agent panel plan `docs/agent-panel/`.
+- Render log `~/.claude/effortless-render-<chat>.log`, written only while the proof log is on (`EFFORTLESS_LOG` set, or a dev-mods load). Agent panel plan `docs/agent-panel/`.
 - Site checks: Jev manifests live in the session scratchpad, not the repo. The footer has no passing Jev check: its only
   click is a footer link that jumps to `#how`, which trips the story's clipped-control findings.

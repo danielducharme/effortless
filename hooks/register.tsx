@@ -1963,7 +1963,7 @@ let probeLevel = 0
 let renderCalls = 0
 let lastRenderProps = ''
 let lastRenderBranch = ''
-// Every time the app asked for the band, with what it sent, written to ~/.claude/effortless-render-<chat>.log each second
+// Every time the app asked for the band, with what it sent, written (while the proof log is on) to ~/.claude/effortless-render-<chat>.log each second
 // (the last 300): how often the band is really redrawn in the app, which the render rig cannot see (hover flicker).
 const renderLog: string[] = []
 let renderLogWritten = 0
@@ -1971,6 +1971,9 @@ async function writeRenderLog($: EngineInterface) {
   if (renderLog.length === renderLogWritten) return
   if (renderLog.length > 600) renderLog.splice(0, renderLog.length - 300)
   renderLogWritten = renderLog.length
+  // A debugging aid only: written when the proof log is on (EFFORTLESS_LOG, or a dev-mods load), else one file per chat
+  // piles up in ~/.claude for good.
+  if (!(await proofPath($).catch(() => undefined))) return
   const home = (await envUserProfile($)) ?? (await envHome($))
   // One file per chat: a shared file was overwritten whole by whichever chat drew last.
   if (home) await $.fs.write(`${home}/.claude/effortless-render-${loadedSession}.log`, renderLog.slice(-300).join('\n') + '\n').catch(() => undefined)
