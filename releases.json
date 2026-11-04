@@ -1,5 +1,15 @@
 [
   {
+    "version": "1.73.0",
+    "date": "2026-11-04",
+    "note": "Haiku is the only judge",
+    "detail": [
+      "Effort is judged by Haiku alone.",
+      "Updates and links now come from this repo."
+    ],
+    "public": true
+  },
+  {
     "version": "1.72.0",
     "date": "2026-10-23",
     "note": "The cold-chat band fits the app's new frame, and waits for 400k tokens",
