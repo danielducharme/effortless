@@ -3,14 +3,14 @@
   "name": "effortless-dev",
   "description": "effortless as it is on main: every release, before it is published. For development only.",
   "owner": {
-    "name": "HeyCubit",
-    "url": "https://github.com/HeyCubit"
+    "name": "Daniel Ducharme",
+    "url": "https://github.com/danielducharme"
   },
   "plugins": [
     {
       "name": "effortless",
       "description": "effortless from main (dev channel).",
-      "source": { "source": "github", "repo": "HeyCubit/effortless", "ref": "main" },
+      "source": { "source": "github", "repo": "danielducharme/effortless", "ref": "main" },
       "category": "productivity"
     }
   ]

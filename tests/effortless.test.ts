@@ -2215,7 +2215,7 @@ describe('settings panel', () => {
     expect(await result()).toBe('✗ Haiku gave no answer')
     expect(toasts).toEqual([])
     // Only the update check reaches out (to GitHub); the judge test sends nothing anywhere.
-    expect(fetched.filter(url => !url.startsWith('https://api.github.com/repos/HeyCubit/effortless/'))).toEqual([])
+    expect(fetched.filter(url => !url.startsWith('https://api.github.com/repos/danielducharme/effortless/'))).toEqual([])
     await band.unmount()
   })
 
@@ -2472,7 +2472,7 @@ describe('terminal bands', () => {
     expect(text).not.toMatch(/"key":"settings-(title|actions)"[^}]*"position":"absolute"/)
     expect(text).not.toContain('"href"')
     await panel.press({ key: 'settings-bug' })
-    expect(copied[0]).toContain('heycubit.github.io/effortless/report/')
+    expect(copied[0]).toContain('github.com/danielducharme/effortless/issues/new')
     await panel.press({ key: 'settings-card-effort' })
     expect(await drawn(panel)).toContain('Helpers')
     expect(await drawn(panel)).not.toContain(' '.repeat(40))
@@ -3379,12 +3379,12 @@ describe('updates', () => {
     await settle()
     const text = await drawn(ui)
     expect(text).toContain('Updated to 1.0.1')
-    expect(text).toContain('/whats-new/')
+    expect(text).toContain('/blob/stable/public.json')
     expect(text).toContain('Star on GitHub')
     await ui.press({ key: 'update-share-go' })
     await settle()
-    expect(w.copied).toEqual(['https://heycubit.github.io/effortless/'])
-    expect(text).toContain('github.com/HeyCubit/effortless')
+    expect(w.copied).toEqual(['https://github.com/danielducharme/effortless'])
+    expect(text).toContain('github.com/danielducharme/effortless')
     await ui.unmount()
   })
 
@@ -3504,7 +3504,7 @@ describe('updates', () => {
     await settle()
     const steps = w.ran.map((r, i) => [r, w.envs[i]] as const).filter(([r]) => r.startsWith('claude plugin'))
     expect(steps.slice(-2).map(([r]) => r)).toEqual(['claude plugin marketplace update effortless', 'claude plugin update effortless@effortless'])
-    for (const [, env] of steps) expect(env).toMatchObject({ GIT_CONFIG_KEY_0: 'url.https://github.com/HeyCubit/.insteadOf', GIT_CONFIG_VALUE_0: 'git@github.com:HeyCubit/' })
+    for (const [, env] of steps) expect(env).toMatchObject({ GIT_CONFIG_KEY_0: 'url.https://github.com/danielducharme/.insteadOf', GIT_CONFIG_VALUE_0: 'git@github.com:danielducharme/' })
     await ui.unmount()
   })
 

@@ -3,8 +3,8 @@
   "name": "effortless",
   "description": "A Claude Code mod: automatic reasoning effort and a prompt-cache countdown.",
   "owner": {
-    "name": "HeyCubit",
-    "url": "https://github.com/HeyCubit"
+    "name": "Daniel Ducharme",
+    "url": "https://github.com/danielducharme"
   },
   "plugins": [
     {
@@ -12,7 +12,7 @@
       "description": "Sets the reasoning effort for every prompt automatically and shows a prompt-cache countdown with one-click Compact.",
       "source": {
         "source": "url",
-        "url": "https://github.com/HeyCubit/effortless.git",
+        "url": "https://github.com/danielducharme/effortless.git",
         "ref": "stable"
       },
       "category": "productivity"
