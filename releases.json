@@ -1,5 +1,12 @@
 [
   {
+    "version": "1.74.0",
+    "date": "2026-11-04",
+    "note": "No more log files left in ~/.claude",
+    "detail": "The render log is written only while debug logging is on, so chats no longer leave a file each in ~/.claude.",
+    "public": true
+  },
+  {
     "version": "1.73.0",
     "date": "2026-11-04",
     "note": "Haiku is the only judge",
